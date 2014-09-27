@@ -6,7 +6,7 @@
     <name>Umer Phonegap Camera test</name>
 
     <description>
-        Example of camera using phonegap - Umer Pasha
+        Example of Camera using phonegap - Umer Pasha
     </description>
 
     <author href="http://www.umerpasha.com" email="mail@umerpasha.com">
@@ -18,7 +18,7 @@
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="debug-server" required="true">
        <param name="domain" value="http://debug.phonegap.com"/>
-       <param name="key" value="upasha"/>
+       <param name="key" value="willoughby"/>
     </feature>
 
     <preference name="phonegap-version" value="3.5.0" />
