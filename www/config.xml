@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.ryanw.barcodedemo"
         version   = "2.0.0">
-    <name>Umer Phonegap Barcode</name>
+    <name>Umer Phonegap Camera test</name>
 
     <description>
-        Example of barcode scanning using phonegap - Umer Pasha
+        Example of camera using phonegap - Umer Pasha
     </description>
 
     <author href="http://www.umerpasha.com" email="mail@umerpasha.com">
@@ -18,7 +18,7 @@
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="debug-server" required="true">
        <param name="domain" value="http://debug.phonegap.com"/>
-       <param name="key" value="willoughby"/>
+       <param name="key" value="upasha"/>
     </feature>
 
     <preference name="phonegap-version" value="3.5.0" />
