@@ -15,13 +15,9 @@
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
     
-	<gap:plugin name="org.apache.cordova.CameraLauncher" />
-AndroidManifest:
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
 
-	<feature name="Camera">
-    <param name="android-package" value="org.apache.cordova.CameraLauncher" />
-	</feature>
+
 	
 	
     <feature name="http://api.phonegap.com/1.0/device" />
