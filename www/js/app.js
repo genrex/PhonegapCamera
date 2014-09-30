@@ -31,7 +31,7 @@ function startCam() {
                                         function(message) { alert('get picture failed'); },
                                         { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
-                                        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
+                                        sourceType: navigator.camera.PictureSourceType.CAMERA }
                                         );
 	
 	
