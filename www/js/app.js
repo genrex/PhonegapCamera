@@ -5,6 +5,22 @@
 var resultDiv;
 
 
+
+        // Wait for PhoneGap to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // PhoneGap is ready
+        //
+        function onDeviceReady() {
+			document.querySelector("#startScan").addEventListener("touchend", startScan, false);
+			document.querySelector("#startCam").addEventListener("touchend", startCam, false);
+			resultDiv = document.querySelector("#results");
+
+
+        }
+
+		
 function startScan() {
 
 	cordova.plugins.barcodeScanner.scan(
@@ -38,20 +54,6 @@ function startCam() {
 }
 
 
-
-        // Wait for PhoneGap to load
-        //
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        // PhoneGap is ready
-        //
-        function onDeviceReady() {
-			document.querySelector("#startScan").addEventListener("touchend", startScan, false);
-			document.querySelector("#startCam").addEventListener("touchend", startCam, false);
-			resultDiv = document.querySelector("#results");
-
-
-        }
 
         function uploadPhoto(imageURI) {
             var options = new FileUploadOptions();
