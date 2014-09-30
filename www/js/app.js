@@ -15,6 +15,7 @@ var resultDiv;
         function onDeviceReady() {
 			document.querySelector("#startScan").addEventListener("touchend", startScan, false);
 			document.querySelector("#startCam").addEventListener("touchend", startCam, false);
+			document.querySelector("#startVCam").addEventListener("touchend", startVCam, false);
 			resultDiv = document.querySelector("#results");
 
 
@@ -47,11 +48,29 @@ function startCam() {
                                         function(message) { alert('get picture failed'); },
                                         { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
-                                        sourceType: navigator.camera.PictureSourceType.CAMERA }
+                                        sourceType: navigator.camera.PictureSourceType.CAMERA,
+										MediaType: Camera.MediaType.ALLMEDIA}
                                         );
 	
 	
 }
+
+
+function startVCam() {
+
+	
+            // Retrieve image file location from specified source
+            navigator.camera.capture.captureVideo(uploadPhoto,
+                                        function(message) { alert('get video failed'); },
+                                        { quality: 50, 
+                                        destinationType: navigator.camera.DestinationType.FILE_URI,
+                                        sourceType: navigator.camera.PictureSourceType.CAMERA,
+										MediaType: Camera.MediaType.ALLMEDIA										}
+                                        );
+	
+	
+}
+
 
 //                                        sourceType: navigator.camera.PictureSourceType.PHOTOALBUM }
 
