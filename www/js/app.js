@@ -60,18 +60,8 @@ function startVCam() {
 
 	
             // Retrieve image file location from specified source
-            navigator.camera.capture.captureVideo(uploadPhoto,
-                                        function(message) { alert('get video failed'); },
-                                        { quality: 50, 
-                                        destinationType: navigator.camera.DestinationType.FILE_URI,
-                                        sourceType: navigator.camera.PictureSourceType.CAMERA}
-                                        );
-	
-	
+			navigator.device.capture.captureVideo(uploadPhoto, function(message) { alert('get video failed'); }, {limit: 2});
 }
-
-
-//                                        sourceType: navigator.camera.PictureSourceType.PHOTOALBUM }
 
 
         function uploadPhoto(imageURI) {
