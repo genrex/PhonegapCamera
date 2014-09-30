@@ -17,7 +17,7 @@
     
 	<gap:plugin name="org.apache.cordova.camera" version="0.3.2" />
 
-	<plugin name="Capture" value="org.apache.cordova.Capture"/>
+	<gap:plugin name="org.apache.cordova.media-capture" version="0.3.3" />
 	
 	
     <feature name="http://api.phonegap.com/1.0/device" />
