@@ -1,32 +1,28 @@
+<!DOCTYPE html>
 <html>
-<head>
-    <title>File Transfer Example</title>
-
-    <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-        var pictureSource;   // picture source
-        var destinationType; // sets the format of returned value
-
-        // Wait for Cordova to load
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Camera Pic Example</title>
+<script>
+        // Wait for PhoneGap to load
         //
         document.addEventListener("deviceready", onDeviceReady, false);
 
-        // Cordova is ready
+        // PhoneGap is ready
         //
-function onDeviceReady() {
-    pictureSource=navigator.camera.PictureSourceType;
-    destinationType=navigator.camera.DestinationType;
-}
+        function onDeviceReady() {
 
-
-        function browse(){
+            // Retrieve image file location from specified source
             navigator.camera.getPicture(uploadPhoto,
                                         function(message) { alert('get picture failed'); },
-                                        { quality: 50,
+                                        { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
                                         sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY }
                                         );
+
         }
 
         function uploadPhoto(imageURI) {
@@ -35,14 +31,14 @@ function onDeviceReady() {
             options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
 
-            var params = {};
+            var params = new Object();
             params.value1 = "test";
-            params.value2 = document.getElementById('file_name').value + "";
-            params.value3 = document.getElementById('file_description').value + "";
+            params.value2 = "param";
+
             options.params = params;
 
             var ft = new FileTransfer();
-            ft.upload(imageURI, encodeURI("http://site.com/pages/upload.php"), win, fail, options);
+            ft.upload(imageURI, "http://some.server.com/upload.php", win, fail, options);
         }
 
         function win(r) {
@@ -51,99 +47,22 @@ function onDeviceReady() {
             console.log("Sent = " + r.bytesSent);
         }
 
-        function onFileSystemSuccess(fileSystem) {
-            console.log(fileSystem.name);
-        }
-
-        function onResolveSuccess(fileEntry) {
-            console.log(fileEntry.name);
-        }
-
-        function fail(evt) {
-            console.log(evt.target.error.code);
-        }
-
-
         function fail(error) {
-            alert("An error has occurred: Code = " + error.code);
+            alert("An error has occurred: Code = " = error.code);
             console.log("upload error source " + error.source);
             console.log("upload error target " + error.target);
         }
 
-
-
-
-
-
-function capturePhoto() {
-  // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-  navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-    destinationType: destinationType.DATA_URL });
-}
-
-function onPhotoDataSuccess(imageData) {
-  // console.log(imageData);
-
-  var smallImage = document.getElementById('smallImage');
-  smallImage.style.display = 'block';
-  smallImage.src = "data:image/jpeg;base64," + imageData;
-
-  var smallTEXT = document.getElementById('smallTEXT');
-  smallTEXT.style.display = 'block';
-  smallTEXT.innerHTML = "data:image/jpeg;base64," + imageData;
-}
-
-function onPhotoURISuccess(imageURI) {
-  // Uncomment to view the image file URI 
-  // console.log(imageURI);
-
-  // Get image handle
-  //
-  var largeImage = document.getElementById('largeImage');
-
-  // Unhide image elements
-  //
-  largeImage.style.display = 'block';
-
-  largeImage.src = imageURI;
-}
-function capturePhoto() {
-  // Take picture using device camera and retrieve image as base64-encoded string
-  navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-    destinationType: destinationType.DATA_URL });
-}
-
-
-
-// Called if something bad happens.
-// 
-function onFail(message) {
-  alert('Failed because: ' + message);
-}
-
-
-
-
-
-
-
         </script>
-</head>
+
+
+
+		</head>
+
+
 <body>
-<h1>Example</h1>
+    <h1>Example</h1>
     <p>Upload File</p>
 
-    <form name ="filename" id="file_name_form" action="#">
-    Title <br><input type="text" name="name" id="file_name" /><br>
-    Description <br><textarea type="text" name="description" id="file_description" /></textarea>
-    </form>
-    <button onclick="capturePhoto();">Use Camera</button> <br>
-    <button onclick="browse();">browse gallery</button><br>
-    <img style="display:none;width:160px;" id="smallImage" src="" />
-    <hr>
-    <div id="smallTEXT">ggg</div>
-    <button onclick"uploadPhoto();">submit</button>
-
-
-</body>
+    </body>
 </html>
