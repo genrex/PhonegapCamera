@@ -49,7 +49,7 @@ function startCam() {
                                         { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
                                         sourceType: navigator.camera.PictureSourceType.CAMERA,
-										MediaType: camera.MediaType.ALLMEDIA}
+										MediaType: Camera.MediaType.ALLMEDIA}
                                         );
 	
 	
@@ -64,8 +64,7 @@ function startVCam() {
                                         function(message) { alert('get video failed'); },
                                         { quality: 50, 
                                         destinationType: navigator.camera.DestinationType.FILE_URI,
-                                        sourceType: navigator.camera.PictureSourceType.CAMERA,
-										MediaType: camera.MediaType.ALLMEDIA										}
+                                        sourceType: navigator.camera.PictureSourceType.CAMERA}
                                         );
 	
 	
