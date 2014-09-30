@@ -53,6 +53,7 @@ function startCam() {
 	
 }
 
+//                                        sourceType: navigator.camera.PictureSourceType.PHOTOALBUM }
 
 
         function uploadPhoto(imageURI) {

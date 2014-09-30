@@ -15,6 +15,11 @@
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
 
+	<feature name="Camera">
+    <param name="android-package" value="org.apache.cordova.CameraLauncher" />
+	</feature>
+	
+	
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="debug-server" required="true">
        <param name="domain" value="http://debug.phonegap.com"/>
