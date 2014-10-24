@@ -45,14 +45,15 @@ function startGLoc() {
 
 	navigator.geolocation.getCurrentPosition(
 		function (position) {
-			var s = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                            'Longitude: '          + position.coords.longitude             + '<br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          + position.timestamp                    + '<br />';
+			var s = "<a href='geo:" + position.coords.latitude + "," + position.coords.longitude + "'>Open Map</a><br />" +
+							"Latitude: "           + position.coords.latitude              + "<br />" +
+                            "Longitude: "          + position.coords.longitude             + "<br />" +
+                            "Altitude: "           + position.coords.altitude              + "<br />" +
+                            "Accuracy: "           + position.coords.accuracy              + "<br />" +
+                            "Altitude Accuracy: "  + position.coords.altitudeAccuracy      + "<br />" +
+                            "Heading: "            + position.coords.heading               + "<br />" +
+                            "Speed: "              + position.coords.speed                 + "<br />" +
+                            "Timestamp: "          + position.timestamp                    + "<br />";
 			GLocDiv.innerHTML = s;
 		}, 
 		function (error) {
