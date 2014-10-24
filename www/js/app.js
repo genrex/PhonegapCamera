@@ -16,7 +16,9 @@ var resultDiv;
 			document.querySelector("#startScan").addEventListener("touchend", startScan, false);
 			document.querySelector("#startCam").addEventListener("touchend", startCam, false);
 			document.querySelector("#startVCam").addEventListener("touchend", startVCam, false);
+			document.querySelector("#startGLoc").addEventListener("touchend", startGLoc, false);
 			resultDiv = document.querySelector("#results");
+			GLocDiv = document.querySelector("#GLoc");
 
 
         }
@@ -39,6 +41,27 @@ function startScan() {
 	
 }
 
+function startGLoc() {
+
+	navigator.geolocation.getCurrentPosition(
+		function (position) {
+			var s = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + position.timestamp                    + '<br />';
+			GLocDiv.innerHTML = s;
+		}, 
+		function (error) {
+			alert("GPS failed: " + error);
+		}
+	);
+	
+	
+}
 
 function startCam() {
 
