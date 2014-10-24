@@ -19,6 +19,7 @@
 
 	<gap:plugin name="org.apache.cordova.media-capture" version="0.3.3" />
 	
+	<gap:plugin name="org.apache.cordova.core.geolocation"  />
 	
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="debug-server" required="true">
